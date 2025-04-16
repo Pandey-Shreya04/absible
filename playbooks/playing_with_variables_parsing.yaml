@@ -16,7 +16,7 @@
   tasks:
     - name: 1010-DEVICE NAMES DISPLAY 
       debug:
-        var: device_names[0:2]
+        var: " {{ device_names[0:2] }} "
 
     - name: 1020-DEVICE CRED DISPLAY
       debug:
@@ -24,5 +24,5 @@
 
     - name: 1030-DEVICE DISPLAY
       debug:
-        var: device
+        msg: " {{ device[1:3] }} "
 
