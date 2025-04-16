@@ -1,0 +1,28 @@
+---
+- name: Play A
+  hosts: localhost 
+  gather_facts: false
+  vars: 
+    device: "router"
+    device_names:
+      - R1
+      - R2
+      - R3
+      - R4
+    device_cred:
+      username: "user"
+      password: "admin"
+
+  tasks:
+    - name: 1010-DEVICE NAMES DISPLAY 
+      debug:
+        var: device_names[0:2]
+
+    - name: 1020-DEVICE CRED DISPLAY
+      debug:
+        var: device_cred
+
+    - name: 1030-DEVICE DISPLAY
+      debug:
+        var: device
+
