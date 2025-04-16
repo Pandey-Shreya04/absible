@@ -14,15 +14,19 @@
       password: "admin"
 
   tasks:
-    - name: 1010-DEVICE NAMES DISPLAY 
-      debug:
-        var: " {{ device_names[0:2] }} "
+    # - name: 1010-DEVICE NAMES DISPLAY 
+    #   debug:
+    #     var: " {{ device_names[0:2] | lower }} "
 
-    - name: 1020-DEVICE CRED DISPLAY
-      debug:
-        var: device_cred
+    # - name: 1020-DEVICE CRED DISPLAY
+    #   debug:
+    #     var: device_cred
 
     - name: 1030-DEVICE DISPLAY
       debug:
-        msg: " {{ device[1:3] | upper }} "
+        # msg: " {{ device[1:3] | upper }} "
+        # var: "  device[1:3] | upper "
+        # var: device | upper
+        # msg: " {{ device[1:3].upper() }} "
+        msg: " Device name is {{ device.upper() }}"
 
